@@ -92,6 +92,77 @@ counter(); // 2
 </pre>
 
 <div class="question">
+What is Hoisting?
+</div>
+
+<div class="answer">
+Hoisting is JavaScript behavior where variable and function declarations are moved to the top of their scope before execution.
+</div>
+
+<pre class="code">
+console.log(a); // undefined
+var a = 10;
+
+// Function hoisting
+sayHello(); // works
+
+function sayHello() {
+    console.log("Hello");
+}
+</pre>
+
+<div class="question">
+What is TDZ (Temporal Dead Zone)?
+</div>
+
+<div class="answer">
+TDZ is the time between variable declaration and initialization where you cannot access variables declared with let and const.
+</div>
+
+<pre class="code">
+console.log(x); // ❌ Error (TDZ)
+
+let x = 10;
+</pre>
+
+<div class="question">
+What is IIFE?
+</div>
+
+<div class="answer">
+IIFE (Immediately Invoked Function Expression) is a function that runs immediately after it is defined.
+</div>
+
+<pre class="code">
+(function() {
+    console.log("IIFE executed");
+})();
+
+// With parameters
+(function(name) {
+    console.log("Hello " + name);
+})("Aditya");
+</pre>
+
+<div class="question">
+What is REPL in Node.js?
+</div>
+
+<div class="answer">
+REPL stands for Read, Eval, Print, Loop. It is an interactive shell where you can execute JavaScript code line by line.
+</div>
+
+<pre class="code">
+node
+
+> 2 + 2
+4
+
+> console.log("Hello")
+Hello
+</pre>
+
+<div class="question">
 How to copy large files in Node.js?
 </div>
 
@@ -115,4 +186,5 @@ writeStream.on('finish', () => {
 </div>
 
 </body>
+
 </html>
