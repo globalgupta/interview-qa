@@ -29,6 +29,16 @@ margin-left:20px;
 color:gray;
 }
 
+.code{
+background:#272822;
+color:#f8f8f2;
+padding:15px;
+border-radius:8px;
+overflow:auto;
+margin-top:10px;
+font-family: monospace;
+}
+
 </style>
 
 </head>
@@ -47,7 +57,6 @@ What is Node.js?
 Node.js is runtime environment.
 </div>
 
-
 <div class="question">
 What is Stack?
 </div>
@@ -56,9 +65,28 @@ What is Stack?
 Stack follows LIFO principle.
 </div>
 
+<div class="question">
+How to copy large files in Node.js?
+</div>
+
+<div class="answer">
+Using streams and pipe method:
+</div>
+
+<pre class="code">
+const fs = require('fs');
+
+const readStream = fs.createReadStream('input.txt');
+const writeStream = fs.createWriteStream('output.txt');
+
+readStream.pipe(writeStream);
+
+writeStream.on('finish', () => {
+    console.log('File copied using pipe!');
+});
+</pre>
 
 </div>
 
 </body>
-
 </html>
