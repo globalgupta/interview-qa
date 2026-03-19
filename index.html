@@ -66,27 +66,33 @@ Stack follows LIFO principle.
 </div>
 
 <div class="question">
-How to copy large files in Node.js?
+What is Closure?
 </div>
 
 <div class="answer">
-Using streams and pipe method:
+Closure is a function that remembers variables from its outer scope even after the outer function has executed.
 </div>
 
 <pre class="code">
-const fs = require('fs');
+function outer() {
+    let count = 0;
 
-const readStream = fs.createReadStream('input.txt');
-const writeStream = fs.createWriteStream('output.txt');
+    function inner() {
+        count++;
+        console.log(count);
+    }
 
-readStream.pipe(writeStream);
+    return inner;
+}
 
-writeStream.on('finish', () => {
-    console.log('File copied using pipe!');
-});
+const counter = outer();
+
+counter(); // 1
+counter(); // 2
 </pre>
 
 </div>
 
 </body>
+
 </html>
