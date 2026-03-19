@@ -91,8 +91,28 @@ counter(); // 1
 counter(); // 2
 </pre>
 
+<div class="question">
+How to copy large files in Node.js?
+</div>
+
+<div class="answer">
+Using streams and pipe method:
+</div>
+
+<pre class="code">
+const fs = require('fs');
+
+const readStream = fs.createReadStream('input.txt');
+const writeStream = fs.createWriteStream('output.txt');
+
+readStream.pipe(writeStream);
+
+writeStream.on('finish', () => {
+    console.log('File copied using pipe!');
+});
+</pre>
+
 </div>
 
 </body>
-
 </html>
