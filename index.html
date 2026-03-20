@@ -103,9 +103,7 @@ Hoisting is JavaScript behavior where variable and function declarations are mov
 console.log(a); // undefined
 var a = 10;
 
-// Function hoisting
 sayHello(); // works
-
 function sayHello() {
     console.log("Hello");
 }
@@ -120,8 +118,7 @@ TDZ is the time between variable declaration and initialization where you cannot
 </div>
 
 <pre class="code">
-console.log(x); // ❌ Error (TDZ)
-
+console.log(x); // ❌ Error
 let x = 10;
 </pre>
 
@@ -138,7 +135,6 @@ IIFE (Immediately Invoked Function Expression) is a function that runs immediate
     console.log("IIFE executed");
 })();
 
-// With parameters
 (function(name) {
     console.log("Hello " + name);
 })("Aditya");
@@ -160,6 +156,31 @@ node
 
 > console.log("Hello")
 Hello
+</pre>
+
+<div class="question">
+Types of Indexing?
+</div>
+
+<div class="answer">
+Indexing improves database query performance. Common types:
+</div>
+
+<pre class="code">
+// Single Field Index
+db.users.createIndex({ name: 1 });
+
+// Compound Index
+db.users.createIndex({ name: 1, age: -1 });
+
+// Text Index
+db.users.createIndex({ description: "text" });
+
+// Unique Index
+db.users.createIndex({ email: 1 }, { unique: true });
+
+// TTL Index
+db.sessions.createIndex({ createdAt: 1 }, { expireAfterSeconds: 3600 });
 </pre>
 
 <div class="question">
